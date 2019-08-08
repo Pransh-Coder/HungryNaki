@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">HungryNaki</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment
+        <string name="Break Fast"></string>
+        <string name="Chinese"></string>
+        <string name="Indian"></string>
+        <string name="Mexican"></string>
+        <string name="Burger"></string>
+        <string name="Pizza"></string>
+        <string name="Drinks"></string>
+        <string name="Desserts"></string>
+        <string name="Bar Menu"></string>
+    </string>
+</resources>

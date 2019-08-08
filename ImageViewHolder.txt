@@ -1,0 +1,17 @@
+    @Override
+    public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.album_layout,parent,false);      //to tell that you have to use album_layout.xml intead of activity_main.xml                                                                            //return obj of viewHolder
+        ImageViewHolder imageViewHolder=new ImageViewHolder(view);                                  // return obj of imgView holder  (passing obj of view class)
+        return imageViewHolder;
+    }
+
+
+public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
+
+        int image_id=images[position];
+
+        String title=data[position];
+
+        holder.Album.setImageResource(image_id);
+        holder.AlbumTitle.setText(title);
+    }

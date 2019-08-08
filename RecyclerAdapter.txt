@@ -1,0 +1,59 @@
+package com.example.hungrynaki;
+
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ImageViewHolder> {
+
+    private int images[];
+
+    public  RecyclerAdapter(int images[])                                                           //constructor for adapter
+    {
+        this.images=images;                                                                         //initialize the array
+    }
+
+    private String data[];
+
+    public RecyclerAdapter(String[] data) {
+        this.data = data;
+    }
+
+    @Override
+    public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.album_layout,parent,false);      //to tell that you have to use album_layout.xml intead of activity_main.xml                                                                            //return obj of viewHolder
+        ImageViewHolder imageViewHolder=new ImageViewHolder(view);                                  // return obj of imgView holder  (passing obj of view class)
+        return imageViewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
+
+        int image_id=images[position];
+
+        String title=data[position];
+
+        holder.Album.setImageResource(image_id);
+        holder.AlbumTitle.setText(title);
+    }
+
+    @Override
+    public int getItemCount() {
+        return data.length;
+    }
+
+    public static class ImageViewHolder extends RecyclerView.ViewHolder
+    {
+        ImageView Album;
+        TextView AlbumTitle;
+        public ImageViewHolder(@NonNull View itemView) {
+            super(itemView);
+            Album=itemView.findViewById(R.id.image);
+            AlbumTitle=itemView.findViewById(R.id.textView3);
+        }
+    }
+}
